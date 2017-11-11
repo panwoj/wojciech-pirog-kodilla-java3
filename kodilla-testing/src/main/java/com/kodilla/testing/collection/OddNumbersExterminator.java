@@ -1,18 +1,21 @@
 package com.kodilla.testing.collection;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OddNumbersExterminator {
 
-    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
+    public List<Integer> exterminate(ArrayList<Integer> numbers) {
         ArrayList<Integer> numbersWithoutOdd = new ArrayList<Integer>();
-        int temporaryValue = 0;
-        for (int i=0; i < numbers.size(); i++) {
-            temporaryValue = numbers.get(i);
-            if (temporaryValue % 2 == 0 && temporaryValue != 0) {
+        for (Integer temporaryValue : numbers) {
+            if (notOddOrZero(temporaryValue)) {
                 numbersWithoutOdd.add(temporaryValue);
             }
         }
         return numbersWithoutOdd;
+    }
+
+    private boolean notOddOrZero(Integer value) {
+        return (value % 2 == 0 && value != 0);
     }
 }
