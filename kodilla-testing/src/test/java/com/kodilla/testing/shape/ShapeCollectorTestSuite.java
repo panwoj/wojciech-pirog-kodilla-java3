@@ -2,6 +2,8 @@ package com.kodilla.testing.shape;
 
 import org.junit.*;
 
+import java.util.ArrayList;
+
 public class ShapeCollectorTestSuite {
     private static int counter = 0;
     @BeforeClass
@@ -21,7 +23,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testGetFigure() {
         //Given
-        Shape circle1 = new Circle();
+        Shape circle1 = new Circle(1);
         ShapeCollector collector = new ShapeCollector();
         collector.addFigure(circle1);
         //When
@@ -32,7 +34,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure() {
         //Given
-        Shape circle1 = new Circle();
+        Shape circle1 = new Circle(1);
         ShapeCollector collector = new ShapeCollector();
         //When
         collector.addFigure(circle1);
@@ -42,7 +44,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        Shape circle1 = new Circle();
+        Shape circle1 = new Circle(1);
         ShapeCollector collector = new ShapeCollector();
         collector.shapeList.add(circle1);
         //When
@@ -53,20 +55,17 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testShowFigures() {
         //Given
-        Shape circle1 = new Circle();
-        Shape triangle1 = new Triangle();
-        Shape square1 = new Square();
+        Shape circle1 = new Circle(1);
+        Shape triangle1 = new Triangle(1,2);
+        Shape square1 = new Square(2);
         ShapeCollector collector = new ShapeCollector();
         collector.shapeList.add(circle1);
         collector.shapeList.add(triangle1);
         collector.shapeList.add(square1);
         //When
-        collector.showFigures();
+        String result = collector.showFigures();
+        String shapeListSize = "" + collector.shapeList.size();
         //Then
-        int i = 0;
-        for (Shape shape: collector.shapeList) {
-            Assert.assertEquals(collector.getFigure(i), shape);
-            i++;
-        }
+        Assert.assertEquals(result.substring(0,1),shapeListSize);
     }
 }
