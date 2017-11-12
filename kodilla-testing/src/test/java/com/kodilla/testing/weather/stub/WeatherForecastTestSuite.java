@@ -7,13 +7,13 @@ public class WeatherForecastTestSuite {
     @Test
     public void testCalculateForecastWithStub(){
         //Given
-        //Temperatures temperatures = ...;
-        //WeatherForecast weatherForecast = new WeatherForecast(temperatures);
+        Temperatures temperatures = new TemperaturesStub();
+        WeatherForecast weatherForecast = new WeatherForecast(temperatures);
 
         //When
-        //int quantityOfSensors = weatherForecast.calculateForecast().size();
+        int quantityOfSensors = weatherForecast.calculateForecast().size();
 
         //Then
-        //Assert.assertEquals(5, quantityOfSensors);
+        Assert.assertEquals(5, quantityOfSensors);
     }
 }
