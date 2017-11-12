@@ -17,9 +17,21 @@ public class CheckStatistics {
         usersNumber = statistics.usersNames().size();
         postsNumber = statistics.postsCount();
         commentsNumber = statistics.commentsCount();
-        averagePostsNumberOnUser = postsNumber/usersNumber;
-        averageCommentsNumberOnUser = commentsNumber/usersNumber;
-        averageCommentsNumberOnPosts = commentsNumber/postsNumber;
+        if (statistics.postsCount() > 0) {
+            averagePostsNumberOnUser = postsNumber / usersNumber;
+        } else {
+            averagePostsNumberOnUser = 0;
+        }
+        if (statistics.commentsCount() > 0) {
+            averageCommentsNumberOnUser = commentsNumber/usersNumber;
+        } else {
+            averageCommentsNumberOnUser = 0;
+        }
+        if (statistics.postsCount() > 0 && statistics.commentsCount() > 0) {
+            averageCommentsNumberOnPosts = commentsNumber / postsNumber;
+        }else {
+            averageCommentsNumberOnPosts = 0;
+        }
     }
 
     public void ShowStatistics() {
