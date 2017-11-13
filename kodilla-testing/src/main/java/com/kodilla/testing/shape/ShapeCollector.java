@@ -18,14 +18,9 @@ public class ShapeCollector {
         return shapeList.get(n);
     }
 
-    public String showFigures() {
-        int counter = 0;
-        String showFiguresText = "";
+    public void showFigures() {
         for (Shape shape : shapeList) {
-            showFiguresText += shape + " ";
-            counter++;
+            System.out.println(shape);
         }
-        String returnText = counter + " figures: " + showFiguresText;
-        return returnText;
     }
 }

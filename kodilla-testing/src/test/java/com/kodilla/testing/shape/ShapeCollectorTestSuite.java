@@ -58,14 +58,23 @@ public class ShapeCollectorTestSuite {
         Shape circle1 = new Circle(1);
         Shape triangle1 = new Triangle(1,2);
         Shape square1 = new Square(2);
+
+        ArrayList<Shape> testShapeList = new ArrayList<Shape>();
+        testShapeList.add(circle1);
+        testShapeList.add(triangle1);
+        testShapeList.add(square1);
+
         ShapeCollector collector = new ShapeCollector();
         collector.shapeList.add(circle1);
         collector.shapeList.add(triangle1);
         collector.shapeList.add(square1);
         //When
-        String result = collector.showFigures();
-        String shapeListSize = "" + collector.shapeList.size();
+        collector.showFigures();
         //Then
-        Assert.assertEquals(result.substring(0,1),shapeListSize);
+        int i = 0;
+        for (Shape shape : collector.shapeList) {
+            Assert.assertEquals(collector.getFigure(i), shape);
+            i++;
+        }
     }
 }
