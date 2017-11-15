@@ -2,12 +2,13 @@ package com.kodilla.testing.forum;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ForumUser {
     private String name;
     private String realName;
-    private ArrayList<ForumPost> posts = new ArrayList<ForumPost>();
-    private LinkedList<ForumComment> comments = new LinkedList<ForumComment>();
+    private List<ForumPost> posts = new ArrayList<ForumPost>();
+    private List<ForumComment> comments = new LinkedList<ForumComment>();
 
     public ForumUser(String name, String realName) {
         this.name = name;
@@ -34,10 +35,18 @@ public class ForumUser {
 
     public ForumPost getPost(int postNumber) {
         ForumPost thePost = null;
-        if (postNumber >= 0 && postNumber < posts.size()) {
+        if (postNumberIsNot0andSmallerThenSize(postNumber)) {
             thePost = posts.get(postNumber);
         }
         return thePost;
+    }
+
+    private boolean postNumberIsNot0andSmallerThenSize(int postNumber) {
+        if (postNumber >= 0 && postNumber < posts.size()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public ForumComment getComment(int commentNumber){
@@ -49,21 +58,22 @@ public class ForumUser {
     }
 
     public boolean removeComment(ForumComment theComment) {
-        boolean result = false;
         if (comments.contains(theComment)) {
             comments.remove(theComment);
-            result = true;
+            return true;
+        } else {
+            return false;
         }
-        return result;
+
     }
 
     public boolean removePost(ForumPost thePost) {
-        boolean result = false;
         if (posts.contains(thePost)) {
             posts.remove(thePost);
-            result = true;
+            return true;
+        } else {
+            return false;
         }
-        return result;
     }
 
     public String getName() {

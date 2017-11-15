@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -14,7 +15,7 @@ public class ForumStatisticsTestSuite {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         CheckStatistics checkStatistics = new CheckStatistics(statisticsMock);
-        ArrayList<String> usersNamesList = new ArrayList<String>();
+        List<String> usersNamesList = new ArrayList<String>();
             usersNamesList.add("j21e");
             usersNamesList.add("johnny32");
             usersNamesList.add("jane5");
