@@ -3,6 +3,7 @@ package com.kodilla.testing.shape;
 import org.junit.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShapeCollectorTestSuite {
     private static int counter = 0;
@@ -59,22 +60,19 @@ public class ShapeCollectorTestSuite {
         Shape triangle1 = new Triangle(1,2);
         Shape square1 = new Square(2);
 
-        ArrayList<Shape> testShapeList = new ArrayList<Shape>();
+        List<Shape> testShapeList = new ArrayList<Shape>();
         testShapeList.add(circle1);
         testShapeList.add(triangle1);
         testShapeList.add(square1);
 
         ShapeCollector collector = new ShapeCollector();
-        collector.shapeList.add(circle1);
-        collector.shapeList.add(triangle1);
-        collector.shapeList.add(square1);
+        collector.addFigure(circle1);
+        collector.addFigure(triangle1);
+        collector.addFigure(square1);
         //When
-        collector.showFigures();
+        String completedText = collector.showFigures();
         //Then
-        int i = 0;
-        for (Shape shape : collector.shapeList) {
-            Assert.assertEquals(collector.getFigure(i), shape);
-            i++;
-        }
+        Assert.assertEquals(testShapeList.toString(),completedText);
+
     }
 }
