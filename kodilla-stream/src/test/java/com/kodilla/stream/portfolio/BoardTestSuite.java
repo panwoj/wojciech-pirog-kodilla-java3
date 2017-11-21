@@ -157,7 +157,7 @@ public class BoardTestSuite {
                 .flatMap(t1 -> t1.getTasks().stream())
                 .map(t -> t.getCreated())
                 .map(d -> d.until(LocalDate.now(), ChronoUnit.DAYS))
-                .reduce(0, (sum, current) -> sum += current);
+                .reduce(0l, (sum, current) -> sum += current);
         long numberOfLongTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(t1 -> t1.getTasks().stream())
