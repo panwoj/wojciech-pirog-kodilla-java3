@@ -1,18 +1,22 @@
 package com.kodilla.exception.RouteNotFoundException;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SearchForFlight {
+    final Boolean connection = true;
+    final Boolean noConnection = false;
 
     public void findFlight(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> airportsConnected = createMapOfAirports();
+        Map<String, Boolean> mapOfAirportsConnected = createMapOfAirports();
         try {
-            if (!airportsConnected.containsKey(flight.getArrivalAirport())) {
+            if (!mapOfAirportsConnected.containsKey(flight.getArrivalAirport())) {
                 throw new IOException();
             }
-            boolean isConnection = this.checkConnection(airportsConnected, flight);
+            boolean isConnection = this.checkConnection(mapOfAirportsConnected, flight);
             showText(isConnection, flight);
         } catch (IOException e) {
             throw new RouteNotFoundException("There is no \"" + flight.getArrivalAirport() +
@@ -22,9 +26,6 @@ public class SearchForFlight {
 
     private Map<String, Boolean> createMapOfAirports() {
         Map<String, Boolean> airportsConnected = new HashMap<>();
-
-        final Boolean connection = true;
-        final Boolean noConnection = false;
 
         airportsConnected.put("Oslo", connection);
         airportsConnected.put("Tokio", noConnection);
