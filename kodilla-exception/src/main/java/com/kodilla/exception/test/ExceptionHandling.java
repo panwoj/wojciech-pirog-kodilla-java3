@@ -12,5 +12,11 @@ public class ExceptionHandling {
             System.out.println(s);
         }
 
+        try {
+            String result = secondChallenge.probablyIWillThrowException(1.9, 1);
+            System.out.println(result);
+        } catch (SecondChallengeException s){
+            System.out.println(s);
+        }
     }
 }
