@@ -20,7 +20,8 @@ public class RouteNotFoundExceptionRunner {
         for (int i = 0; i < flightsToCheck.size(); i++) {
             currentFlight = flightsToCheck.get(i);
             try {
-                search.findFlight(currentFlight);
+                boolean isConnection = search.findFlight(currentFlight);
+                System.out.println(isConnection);
             } catch (RouteNotFoundException e) {
                 System.out.println(e);
             }
