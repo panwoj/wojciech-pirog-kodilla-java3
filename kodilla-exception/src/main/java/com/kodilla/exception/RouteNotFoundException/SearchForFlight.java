@@ -13,8 +13,7 @@ public class SearchForFlight {
                 throw new RouteNotFoundException("There is no \"" + flight.getArrivalAirport() +
                                     "\" airport in the system.");
             }
-            boolean isConnection = mapOfAirportsConnected.get(flight.getArrivalAirport());
-            return isConnection;
+            return mapOfAirportsConnected.get(flight.getArrivalAirport());
         }
 
     private Map<String, Boolean> createMapOfAirports() {
