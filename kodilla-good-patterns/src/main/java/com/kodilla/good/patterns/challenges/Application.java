@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Application {
     public static void main(String[] args) {
 
-        Store store = new Store(10, 10, 10);
+        Store store = new Store(10, 1, 10);
 
         BuyRequestRetriever buyRequestRetriever = new BuyRequestRetriever();
         Order order = buyRequestRetriever.retrieve();

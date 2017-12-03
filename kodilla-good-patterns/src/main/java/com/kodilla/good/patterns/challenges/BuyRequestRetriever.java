@@ -14,7 +14,7 @@ public class BuyRequestRetriever {
         Product game = new Game("Monpoly", 99.99, 4);
         int quantity1 = 1;
 
-        Product book = new Book("Patriot Games", 15.50, 5);
+        Product book = new Book("Patriot Games", 15.50, 14);
         int quantity2 = 4;
 
         Product cd = new Record("Christmas carols", 9.99, 3);
