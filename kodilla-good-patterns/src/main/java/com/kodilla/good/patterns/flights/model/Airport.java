@@ -1,9 +1,7 @@
-package com.kodilla.good.patterns.flights;
+package com.kodilla.good.patterns.flights.model;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public final class Airport {
     private final String airportName;
@@ -15,10 +13,6 @@ public final class Airport {
 
     public void addConnection(Airport airport) {
         connections.add(airport);
-    }
-
-    public boolean removeConnection(Airport airport) {
-        return connections.remove(airport);
     }
 
     public boolean isConnected(Airport airport) {
