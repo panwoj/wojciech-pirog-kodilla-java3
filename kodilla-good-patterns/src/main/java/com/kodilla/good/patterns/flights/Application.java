@@ -15,5 +15,6 @@ public class Application {
 
         SearchProcessor searchProcessor3 = new SearchProcessor(new SearchConnectingFlights());
         searchProcessor3.process(search);
+        searchProcessor3.process(search);
     }
 }
