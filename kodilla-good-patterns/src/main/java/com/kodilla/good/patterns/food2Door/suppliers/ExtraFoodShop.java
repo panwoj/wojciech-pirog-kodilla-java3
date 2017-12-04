@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.suppliers;
+
+import com.kodilla.good.patterns.food2Door.model.Request;
 
 public class ExtraFoodShop implements Supplier {
     @Override

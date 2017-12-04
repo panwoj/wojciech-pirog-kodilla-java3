@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.shopServices;
+
+import com.kodilla.good.patterns.food2Door.model.Request;
 
 public class LittleShopService implements ShopService {
 

@@ -1,4 +1,7 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.suppliers;
+
+import com.kodilla.good.patterns.food2Door.model.Request;
+import com.kodilla.good.patterns.food2Door.model.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +9,7 @@ import java.util.Map;
 public class HealthyShop implements Supplier {
     private Map<String, Boolean> deliverPossibility = new HashMap<>();
 
-    private boolean checkDeliverPossibility(User user) {
+    public HealthyShop() {
         deliverPossibility.put("Kraków", true);
         deliverPossibility.put("Katowice", true);
         deliverPossibility.put("Warszawa", true);
@@ -16,7 +19,9 @@ public class HealthyShop implements Supplier {
         deliverPossibility.put("Gdańsk", false);
         deliverPossibility.put("Wrocław", false);
         deliverPossibility.put("Rzeszów", false);
+    }
 
+    private boolean checkDeliverPossibility(User user) {
         return deliverPossibility.get(user.getCity());
     }
 

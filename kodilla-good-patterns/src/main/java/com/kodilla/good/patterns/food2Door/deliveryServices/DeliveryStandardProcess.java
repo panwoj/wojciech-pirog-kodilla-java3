@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.deliveryServices;
+
+import com.kodilla.good.patterns.food2Door.model.Request;
 
 public class DeliveryStandardProcess implements DeliveryService {
     @Override

@@ -1,4 +1,9 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.processors;
+
+import com.kodilla.good.patterns.food2Door.deliveryServices.DeliveryService;
+import com.kodilla.good.patterns.food2Door.model.BuyingDto;
+import com.kodilla.good.patterns.food2Door.model.Request;
+import com.kodilla.good.patterns.food2Door.shopServices.ShopService;
 
 public class ShopProccesor {
     private ShopService shopService;

@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.model;
+
+import com.kodilla.good.patterns.food2Door.model.User;
 
 public class BuyingDto {
     private User user;

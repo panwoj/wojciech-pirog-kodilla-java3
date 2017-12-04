@@ -1,4 +1,12 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.retrievers;
+
+import com.kodilla.good.patterns.food2Door.model.Order;
+import com.kodilla.good.patterns.food2Door.model.Request;
+import com.kodilla.good.patterns.food2Door.model.User;
+import com.kodilla.good.patterns.food2Door.suppliers.ExtraFoodShop;
+import com.kodilla.good.patterns.food2Door.suppliers.GlutenFreeShop;
+import com.kodilla.good.patterns.food2Door.suppliers.HealthyShop;
+import com.kodilla.good.patterns.food2Door.suppliers.Supplier;
 
 public class RequestRetiever {
 

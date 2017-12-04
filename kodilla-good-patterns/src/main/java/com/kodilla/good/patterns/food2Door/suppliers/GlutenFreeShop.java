@@ -1,7 +1,10 @@
-package com.kodilla.good.patterns.food2Door;
+package com.kodilla.good.patterns.food2Door.suppliers;
+
+import com.kodilla.good.patterns.food2Door.model.Order;
+import com.kodilla.good.patterns.food2Door.model.Request;
 
 public class GlutenFreeShop implements Supplier {
-    private int fruitPackageQuantity = 3;
+    private static final int fruitPackageQuantity = 3;
 
     @Override
     public boolean process(Request request) {

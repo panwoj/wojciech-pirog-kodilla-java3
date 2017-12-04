@@ -1,5 +1,11 @@
 package com.kodilla.good.patterns.food2Door;
 
+import com.kodilla.good.patterns.food2Door.deliveryServices.DeliveryStandardProcess;
+import com.kodilla.good.patterns.food2Door.model.Request;
+import com.kodilla.good.patterns.food2Door.processors.ShopProccesor;
+import com.kodilla.good.patterns.food2Door.retrievers.RequestRetiever;
+import com.kodilla.good.patterns.food2Door.shopServices.LittleShopService;
+
 public class Application {
     public static void main(String[] args) {
         Request request = new RequestRetiever().retrieve();
