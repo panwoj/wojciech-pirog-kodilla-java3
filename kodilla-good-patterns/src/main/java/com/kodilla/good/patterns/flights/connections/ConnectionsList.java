@@ -1,10 +1,15 @@
-package com.kodilla.good.patterns.flights;
+package com.kodilla.good.patterns.flights.connections;
+
+import com.kodilla.good.patterns.flights.model.Airport;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public final class ConnectionsList {
-    public final List<Airport> listOfConnections() {
+    
+    private List<Airport> listOfConnections = new ArrayList<>();
+
+    public ConnectionsList() {
         Airport airport1 = new Airport("Kraków");
         Airport airport2 = new Airport("Gdańsk");
         Airport airport3 = new Airport("Warszawa");
@@ -30,18 +35,18 @@ public final class ConnectionsList {
         airport3.addConnection(airport7);
         airport3.addConnection(airport9);
 
-        List<Airport> resultList = new ArrayList<>();
-        resultList.add(airport1);
-        resultList.add(airport2);
-        resultList.add(airport3);
-        resultList.add(airport4);
-        resultList.add(airport5);
-        resultList.add(airport6);
-        resultList.add(airport7);
-        resultList.add(airport8);
-        resultList.add(airport9);
-
-        return resultList;
+        listOfConnections.add(airport1);
+        listOfConnections.add(airport2);
+        listOfConnections.add(airport3);
+        listOfConnections.add(airport4);
+        listOfConnections.add(airport5);
+        listOfConnections.add(airport6);
+        listOfConnections.add(airport7);
+        listOfConnections.add(airport8);
+        listOfConnections.add(airport9);
     }
 
+    public List<Airport> getListOfConnections() {
+        return listOfConnections;
+    }
 }
