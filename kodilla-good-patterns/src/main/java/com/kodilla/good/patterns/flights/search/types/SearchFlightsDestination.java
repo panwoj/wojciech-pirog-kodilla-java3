@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchFlightsDestination implements SearchType {
+
     @Override
     public List<String> search(Airport airport, List<Airport> connectionsList) {
-        System.out.println("\nSearching for flights to " + airport.getAirportName() + " airport:");
 
        return connectionsList.stream()
                 .filter(a -> a != airport)

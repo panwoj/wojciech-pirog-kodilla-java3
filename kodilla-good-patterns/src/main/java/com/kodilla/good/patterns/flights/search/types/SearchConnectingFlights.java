@@ -6,10 +6,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchConnectingFlights implements SearchType {
+
     @Override
     public List<String> search(Airport airport, List<Airport> connectionsList) {
-        System.out.println("\nSearching for connecting flights from " + airport.getAirportName() + " airport:");
-        return airport.getConnections().stream()
+
+         return airport.getConnections().stream()
                 .flatMap(a -> a.getConnections().stream())
                 .filter(a -> a != airport)
                 .filter(a -> !airport.isConnected(a))
