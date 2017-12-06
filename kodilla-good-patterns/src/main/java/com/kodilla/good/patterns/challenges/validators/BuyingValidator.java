@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class BuyingValidator {
 
     public static boolean checkStore(Store store, Order order) {
-        boolean productsAvaible = true;
+        boolean productsAvailable = true;
 
         List<BuyRequest> requestList = order.getOrder().entrySet().stream()
                 .map(entry -> entry.getValue())
@@ -24,11 +24,11 @@ public class BuyingValidator {
             int storeQuantity = storeMap.get(currentProduct);
 
             if(currentQuantity > storeQuantity) {
-                productsAvaible = false;
+                productsAvailable = false;
             }
 
         }
 
-        return productsAvaible;
+        return productsAvailable;
     }
 }

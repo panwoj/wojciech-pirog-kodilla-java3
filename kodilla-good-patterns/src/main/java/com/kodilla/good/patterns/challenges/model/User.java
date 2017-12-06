@@ -9,14 +9,6 @@ public class User {
         this.surname = surname;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
     @Override
     public String toString() {
         return name + " " + surname;

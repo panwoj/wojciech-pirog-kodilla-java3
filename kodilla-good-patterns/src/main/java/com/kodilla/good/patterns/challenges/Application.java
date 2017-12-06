@@ -4,12 +4,10 @@ import com.kodilla.good.patterns.challenges.model.BuyingDto;
 import com.kodilla.good.patterns.challenges.model.Order;
 import com.kodilla.good.patterns.challenges.model.OrderInformation;
 import com.kodilla.good.patterns.challenges.model.Store;
-import com.kodilla.good.patterns.challenges.repository.BookshopRepository;
-import com.kodilla.good.patterns.challenges.retrievers.BuyRequestRetriever;
-import com.kodilla.good.patterns.challenges.send.SendMail;
-import com.kodilla.good.patterns.challenges.send.SendOrderFromBookshop;
-import com.kodilla.good.patterns.challenges.services.BookshopService;
-import com.kodilla.good.patterns.challenges.services.ProductOrderService;
+import com.kodilla.good.patterns.challenges.repository.*;
+import com.kodilla.good.patterns.challenges.retrievers.*;
+import com.kodilla.good.patterns.challenges.send.*;
+import com.kodilla.good.patterns.challenges.services.*;
 
 public class Application {
     public static void main(String[] args) {

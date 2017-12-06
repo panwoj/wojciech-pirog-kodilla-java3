@@ -30,10 +30,6 @@ public class BuyRequest {
         return quantity;
     }
 
-    public LocalDateTime getRequestDate() {
-        return requestDate;
-    }
-
     public LocalDateTime getDeliveryDate() {
         return deliveryDate;
     }
