@@ -7,11 +7,7 @@ public class DeliveryStandardProcess implements DeliveryService {
     public boolean deliver(Request request) {
         System.out.println("\nSending delivery request to chosen supplier: " + request.getSupplier().toString());
         boolean isDeliver = request.getSupplier().process(request);
-        if (isDeliver) {
-            return true;
-        } else {
-            return false;
-        }
+        return isDeliver;
     }
 
 }

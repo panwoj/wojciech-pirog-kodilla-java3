@@ -21,11 +21,7 @@ public class GlutenFreeShop implements Supplier {
     }
 
     private boolean checkStore(Order order) {
-        if (fruitPackageQuantity >= order.getQuantity()) {
-            return true;
-        } else {
-            return false;
-        }
+        return fruitPackageQuantity >= order.getQuantity();
     }
 
     @Override
