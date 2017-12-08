@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.car.rental;
+package com.kodilla.good.patterns.car.rental.model;
 
 import java.time.LocalDateTime;
 
