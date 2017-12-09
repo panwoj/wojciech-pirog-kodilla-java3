@@ -1,4 +1,5 @@
-package com.kodilla.good.patterns.car.rental;
+package com.kodilla.good.patterns.car.rental.model;
+
 
 public class RentalDto {
     public User user;
@@ -13,7 +14,4 @@ public class RentalDto {
         return user;
     }
 
-    public boolean isRented() {
-        return isRented;
-    }
 }

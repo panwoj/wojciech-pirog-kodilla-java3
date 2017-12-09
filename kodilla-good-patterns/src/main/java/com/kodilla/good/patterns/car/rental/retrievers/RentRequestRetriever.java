@@ -1,4 +1,7 @@
-package com.kodilla.good.patterns.car.rental;
+package com.kodilla.good.patterns.car.rental.retrievers;
+
+import com.kodilla.good.patterns.car.rental.model.RentRequest;
+import com.kodilla.good.patterns.car.rental.model.User;
 
 import java.time.LocalDateTime;
 
