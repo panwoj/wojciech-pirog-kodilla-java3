@@ -18,22 +18,33 @@ public class LibraryTestSuite {
                         new Book("Book number " + b, "Author " + (21 - b),
                                 LocalDate.now().minusYears(b).minusMonths(b*2).minusDays(3 * b))) );
 
-        //making a deep copy of object library
+        //making a shallow copy of object library
         Library library2 = null;
         try {
-            library2 = library.deepCopy();
+            library2 = library.shallowCopy();
             library2.setName("Library 2");
         } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
 
+        //making a deep copy of object library
+        Library library3 = null;
+        try {
+            library3 = library.deepCopy();
+            library3.setName("Library 3");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
+
         //When
-        library2.getBooks().add(
+        library.getBooks().add(
                 new Book("Book number 21", "Author 1", LocalDate.of(2010,10,11)));
         //Then
         System.out.println(library);
         System.out.println(library2);
-        Assert.assertEquals(20, library.getBooks().size());
+        System.out.println(library3);
+        Assert.assertEquals(21, library.getBooks().size());
         Assert.assertEquals(21, library2.getBooks().size());
+        Assert.assertEquals(20, library3.getBooks().size());
     }
 }
