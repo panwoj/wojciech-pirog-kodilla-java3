@@ -61,6 +61,9 @@ public class InvoiceDaoTestSuite {
         product3.getItems().add(item4);
         product3.getItems().add(item5);
         //When
+        productDao.save(product1);
+        productDao.save(product2);
+        productDao.save(product3);
         invoiceDao.save(invoice);
         int id = invoice.getId();
 
