@@ -5,6 +5,12 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveCompany",
+        query = "SELECT * FROM COMPANIES " +
+                "WHERE SUBSTRING(COMPANY_NAME, 1, 3) = SUBSTRING(:SEARCHED_COMPANY, 1, 3)",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
