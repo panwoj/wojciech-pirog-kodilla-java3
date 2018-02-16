@@ -37,4 +37,9 @@ public class Watcher {
         return result;
     }
 
+    @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))")
+    public void logEvent() {
+        LOGGER.info("Starting \"processOrder()\" method");
+    }
+
 }
