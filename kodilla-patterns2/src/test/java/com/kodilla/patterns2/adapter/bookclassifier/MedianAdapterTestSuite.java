@@ -2,6 +2,7 @@ package com.kodilla.patterns2.adapter.bookclassifier;
 
 import com.kodilla.patterns2.adapter.bookclasifier.MedianAdapter;
 import com.kodilla.patterns2.adapter.bookclasifier.librarya.Book;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -17,12 +18,23 @@ public class MedianAdapterTestSuite {
         bookSet.add(new Book("John Smith", "ABC 3", 1990, "A14"));
         bookSet.add(new Book("John Smith", "ABC 4", 1980, "A15"));
         bookSet.add(new Book("John Smith", "ABC 5", 1987, "A16"));
-        bookSet.add(new Book("John Smith", "ABC 5", 1985, "A16"));
         MedianAdapter medianAdapter = new MedianAdapter();
         //When
         int median = medianAdapter.publicationYearMedian(bookSet);
         System.out.println(median);
         //Then
+        Assert.assertEquals(1990, median);
+    }
 
+    @Test
+    public void testPublicationYearMedianEmptySet() {
+        //Given
+        Set<Book> bookSet = new HashSet<>();
+        MedianAdapter medianAdapter = new MedianAdapter();
+        //When
+        int median = medianAdapter.publicationYearMedian(bookSet);
+        System.out.println(median);
+        //Then
+        Assert.assertEquals(0, median);
     }
 }
