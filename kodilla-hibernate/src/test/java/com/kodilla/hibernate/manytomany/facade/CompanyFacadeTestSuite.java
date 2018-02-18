@@ -56,7 +56,7 @@ public class CompanyFacadeTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> companyList = facade.findCompany("Software Machine");
+        List<Company> companyList = facade.findCompany("Soft");
 
         //Then
         Assert.assertEquals(1, companyList.size());
@@ -70,4 +70,56 @@ public class CompanyFacadeTestSuite {
             //do nothing
         }
     }
+
+
+    @Test
+    public void testFindEmployee() {
+        //Given
+        Employee johnSmith = new Employee("John", "Nowak");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        List<Company> companies = new ArrayList<>();
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+        companies.add(softwareMachine);
+        companies.add(dataMaesters);
+        companies.add(greyMatter);
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+
+        //When
+        List<Employee> employeeList = facade.findEmployee("now");
+
+        //Then
+        Assert.assertEquals(1, employeeList.size());
+
+        //CleanUp
+        try {
+            companyDao.delete(softwareMachineId);
+            companyDao.delete(dataMaestersId);
+            companyDao.delete(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+
 }
