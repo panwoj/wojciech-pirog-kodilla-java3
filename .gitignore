@@ -3,6 +3,7 @@
 !gradle/wrapper/gradle-wrapper.jar
 kodilla-hibernate/out/
 kodilla-patterns2/out/
+kodilla-patterns2/.gitignore
 
 
 ### STS ###
