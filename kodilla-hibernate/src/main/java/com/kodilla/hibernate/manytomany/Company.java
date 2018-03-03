@@ -11,6 +11,10 @@ import java.util.List;
                 "WHERE SUBSTRING(COMPANY_NAME, 1, 3) = SUBSTRING(:SEARCHED_COMPANY, 1, 3)",
         resultClass = Company.class
 )
+@NamedQuery(
+        name="Company.findCompanyByText",
+        query = "FROM Company WHERE name LIKE CONCAT('%', :ARG, '%')"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
