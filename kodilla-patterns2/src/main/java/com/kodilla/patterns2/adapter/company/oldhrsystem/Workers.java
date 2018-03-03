@@ -13,7 +13,7 @@ public class Workers {
             4350.00,
             9000.00,
             6200.00};
-    public String getWorke(int n) {
+    public String getWorker(int n) {
         if(n > salaries.length) {
             return "";
         }
